@@ -19,6 +19,13 @@
   )
 )
 
+#let hidden(body) = context {
+  let body = hide(body)
+  body
+  v(-measure(body).height)
+}
+
+
 #set document(
   title: "Read: Under Surveillance by Sanches et al.",
   author: "Yecheng Liang",
@@ -251,11 +258,14 @@ You may not need them, what are your measures to protect personal information?
 = Appendix
 
 #hide[== ]
+#v(-3em)
 
 === Reference
 #bibliography("refs.bib", title: none, style: "modern-language-association-8")
-#hide[@sanches_under_2020]
+#hidden[@sanches_under_2020]
 
 === Resource
-Source code of this slide deck is available at: 
+Source code of this slide deck is available at: \
+#text(size: 0.83em, link("https://github.com/ycl-the-lyc/ubc-displays/blob/master/wrds-150b/slides/sanches-et-al-(under-surveillance).typ"))
 
+To generate handouts, uncomment line "```typc handout: true```"
